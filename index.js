@@ -3,7 +3,12 @@ var vtGrid = require('vt-grid')
 
 var basezoom = 13
 var gridsize = 64
-var key = 'tiles-test1'
+var key = process.argv[3]
+
+if (process.argv.length < 4) {
+  console.log(process.argv[0], process.argv[1], 'path/to/mbtiles.mbtiles', 'path/in/bucket')
+  process.exit(1)
+}
 
 console.log('Building first layer')
 vtGrid({
