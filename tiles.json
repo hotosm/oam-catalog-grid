@@ -1,0 +1,33 @@
+{
+  "name": "oam-catalog-grid",
+  "scheme": "tms",
+  "id": "oam-catalog-grid",
+  "description": "OAM Catalog Grid",
+  "tiles": [
+    "https://oam-catalog-grid.s3.amazonaws.com/PREFIX/{z}/{x}/{y}.pbf"
+  ],
+  "minzoom": 1,
+  "maxzoom": 13,
+  "center": [
+    23.568,
+    61.1299,
+    13
+  ],
+  "bounds": [
+    -166.921356,
+    -78.54381,
+    176.891253,
+    74.666317
+  ],
+  "type": "overlay",
+  "format": "pbf",
+  "vector_layers": [
+    {
+      "id": "footprints",
+      "description": "",
+      "minzoom": 1,
+      "maxzoom": 13,
+      "fields": {}
+    }
+  ]
+}
