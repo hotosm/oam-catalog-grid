@@ -1,5 +1,5 @@
 var fs = require('fs')
-var test = require('tape')
+var test = require('tap').test
 var aggregate = require('geojson-polygon-aggregate')
 var features = require('geojson-stream').parse
 var catalog = require('../read-catalog')
@@ -12,7 +12,9 @@ test(function (t) {
   .pipe(aggregate(aggs.aggregations.footprints))
   .on('data', function (results) {
     var expected = JSON.parse(fs.readFileSync(__dirname + '/fixture/aggregated.json'))
-    t.same(results, expected)
+    for (var p in results) {
+      t.same(results[p].split(','), expected[p].split(','), p)
+    }
     t.end()
   })
 })
