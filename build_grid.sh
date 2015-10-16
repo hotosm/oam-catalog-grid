@@ -9,7 +9,7 @@
 # exit on error
 set -e
 
-export BASE_ZOOM=12
+export BASE_ZOOM=11
 MBTILES=temp/footz${BASE_ZOOM}.mbtiles
 
 # use tippecanoe to build the base layer from footprint features
